@@ -40,9 +40,11 @@ internal class Program
                 int versamento = int.Parse(Console.ReadLine());
                 utenti[i].versamento(versamento);
             }
-            Console.WriteLine("Conti correnti creati correttamente");
+            
         }
-
+        Console.WriteLine("Conti correnti creati correttamente");
+        Console.WriteLine("Premere un tasto per continuare");
+        Console.ReadLine();
         do
         {
             Console.Clear();
@@ -69,7 +71,7 @@ internal class Program
                             int vers = int.Parse(Console.ReadLine());
                             conto.versamento(vers);
                             isPresent = true;
-
+                           
                             break;
                         }
                     }
@@ -77,6 +79,8 @@ internal class Program
                     {
                         Console.WriteLine("Conto non esistente");
                     }
+                    Console.WriteLine("Premere un tasto per continuare");
+                    Console.ReadLine();
                     break;
                 case "2":
                     Console.Write("Inserisci il tuo nome:");
@@ -92,7 +96,7 @@ internal class Program
                             int prel = int.Parse(Console.ReadLine());
                             conto.prelievo(prel);
                             isPresent2 = true;
-
+                           
                             break;
                         }
                     }
@@ -100,12 +104,15 @@ internal class Program
                     {
                         Console.WriteLine("Conto non esistente");
                     }
+                    Console.WriteLine("Premere un tasto per continuare");
                     break;
                 case "3":
                     foreach (ContoCorrente conto in utenti)
                     {
                         conto.details();
                     }
+                    Console.WriteLine("Premere un tasto per continuare");
+                    Console.ReadLine();
                     break;
                 case "4":
                     Console.WriteLine("Quanti bonifici desideri fare?");
@@ -122,7 +129,8 @@ internal class Program
                         somma += i;
                     }
                     Console.WriteLine($"La somma di tutti i bonifici è{somma}");
-                    Console.WriteLine($"La media di tutti i bonifici è{somma/bonifici.Length}        Premere un tasto per continuare");
+                    Console.WriteLine($"La media di tutti i bonifici è{somma/bonifici.Length}");
+                    Console.WriteLine("Premere un tasto per continuare");
                     Console.ReadKey();
                     break;
                 case "5":
@@ -158,6 +166,7 @@ internal class Program
             if (isOpen == true)
             {
                 Console.WriteLine("Conto già esistente");
+                
             }
             else
             {
@@ -172,10 +181,12 @@ internal class Program
             {
                 saldo += vers;
                 Console.WriteLine($"Il tuo nuovo saldo è:{saldo}");
+                
             }
             else
             {
                 Console.WriteLine("Conto non esistente");
+                
             }
             
         }
@@ -187,10 +198,13 @@ internal class Program
                 {
                     saldo -= prel;
                     Console.WriteLine($"Il tuo nuovo saldo è:{saldo}");
+                    
+
                 }
                 else
                 {
                     Console.WriteLine("Saldo non sufficente");
+                    
                 }
             }
  
